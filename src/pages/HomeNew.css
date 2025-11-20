@@ -1,0 +1,176 @@
+.home-container {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.left-panel {
+    width: 50%;
+    padding: 2rem;
+    font-family: monospace;
+    position: relative;
+    z-index: 10;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-panel.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.left-panel.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-panel.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.left-panel.light-mode .theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-section {
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+    /* Added some top margin for spacing */
+}
+
+.site-title {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.profile-info {
+    margin-bottom: 2rem;
+}
+
+.profile-name {
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.profile-role {
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+.experience-section {
+    margin-bottom: 3rem;
+}
+
+.experience-item {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.exp-org {
+    width: 12rem;
+    /* Increased width for longer names */
+    display: inline-block;
+    font-weight: 600;
+}
+
+.exp-role {
+    margin: 0 1rem;
+    opacity: 0.8;
+}
+
+.exp-date {
+    margin-left: auto;
+    /* Push date to the right or keep fixed spacing */
+    opacity: 0.6;
+}
+
+.footer-links {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+.links-container {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.125rem;
+    font-family: monospace;
+}
+
+.link-item {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-item:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.right-panel {
+    width: 50%;
+    position: relative;
+    height: 100vh;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .left-panel {
+        width: 100%;
+        min-height: 100vh;
+        /* Full screen on mobile */
+        padding: 1.5rem;
+    }
+
+    .right-panel {
+        display: none;
+        /* Hide shader on mobile for performance/layout or make it background */
+    }
+
+    .exp-org {
+        width: auto;
+        margin-right: 1rem;
+    }
+
+    .experience-item {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+
+    .exp-role,
+    .exp-date {
+        margin: 0;
+    }
+}
