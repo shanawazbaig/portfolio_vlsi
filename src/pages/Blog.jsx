@@ -5,34 +5,10 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Clock } from 'lucide-react';
+import { loadAllPosts } from '../utils/blogLoader';
 
-// Mock blog data
-const blogPosts = [
-    {
-        id: 'getting-started-fpga',
-        title: 'Getting Started with FPGA Design',
-        date: '2024-03-15',
-        excerpt: 'A comprehensive guide to starting your journey in Field Programmable Gate Arrays.',
-        readTime: '5 min read',
-        tags: ['FPGA', 'Hardware', 'Tutorial']
-    },
-    {
-        id: 'verilog-tips',
-        title: 'Essential Verilog Tips for Beginners',
-        date: '2024-02-28',
-        excerpt: 'Common pitfalls to avoid when writing Verilog HDL for the first time.',
-        readTime: '4 min read',
-        tags: ['Verilog', 'HDL', 'Tips']
-    },
-    {
-        id: 'system-design',
-        title: 'System Design Principles in VLSI',
-        date: '2024-01-10',
-        excerpt: 'Understanding the core principles of designing scalable VLSI systems.',
-        readTime: '7 min read',
-        tags: ['VLSI', 'Design', 'Principles']
-    }
-];
+// Load blog posts from markdown files
+const blogPosts = loadAllPosts();
 
 const Blog = () => {
     const LeftContent = (
